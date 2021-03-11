@@ -1,6 +1,5 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    String
 
 *** Variables ***
 ${SEARCH_INPUT}         id=search-product-input
@@ -11,7 +10,7 @@ ${UNAVAILABLE_TXT}      Não é possível entregar os produtos no mesmo pedido
 
 *** Keywords ***
 adding one "${PRODUCT}" to the bag
-    Wait Until Element Is Visible    ${SEARCH_INPUT}
+    Wait Until Element Is Visible    ${SEARCH_INPUT}    timeout=10
     Click Element   ${SEARCH_INPUT}
     Input Text  ${SEARCH_INPUT}  ${PRODUCT}
     Wait Until Element Is Visible   ${PRODUCT_LIST}

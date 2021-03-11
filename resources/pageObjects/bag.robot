@@ -1,6 +1,5 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    String
 
 *** Variables ***
 ${SUBTOTAL_TXT}         id=subtotal
@@ -16,6 +15,9 @@ the subtotal must be "${SUBTOTAL_VALUE}"
 
 the minimum value message is displayed
     Element Should Be Visible       ${PROGRESS_BAR}
+
+the minimum value message isn`t displayed
+    Element Should Not Be Visible       ${PROGRESS_BAR}
 
 the finish order button is disabled
     Element Should Be Disabled      ${FINISH_ORDER_BTN}

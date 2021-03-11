@@ -1,6 +1,5 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    String
 
 *** Variables ***
 ${HOME_URL}                     https://www.ze.delivery
