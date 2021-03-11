@@ -6,8 +6,8 @@ Library    JsonValidator
 Library    JSONSchemaLibrary   ./resources/schemas
 
 *** Variable ***
+${API_KEY}
 ${API_URL}  http://api.openweathermap.org/data/2.5
-${API_KEY}  641df9381bbf93513a56728480829c06
 
 *** Keywords ***
 search the weather on "${QUERY}"
