@@ -9,17 +9,17 @@ Scenario: Get weather by city name
     And the response is valid
     And the city name is "Dubai"
 
+Scenario: Get weather by city name and country
+    When search the weather on "London,uk"
+    Then the status code is "200"
+    And the response is valid
+    And the city name is "London"
+
 Scenario: Get weather by city id
     When search the weather by the city id "3448439"
     Then the status code is "200"
     And the response is valid
     And the city name is "São Paulo"
-
-Scenario: Get weather by geographic coordinates
-    When search the weather by the latitude "35" and longitude "139"
-    Then the status code is "200"
-    And the response is valid
-    And the city name is "Shuzenji"
 
 Scenario: Get weather by zip code
     When search the weather by the zip code "94040,us"
@@ -46,3 +46,9 @@ Scenario: Get weather by non existent city name
     When search the weather on "TEST"
     Then the status code is "404"
     And the message error is "city not found"
+
+Scenario: Get weather by geographic coordinates
+    When search the weather by the latitude "35" and longitude "139"
+    Then the status code is "200"
+    And the response is valid
+    And the city name is "Shuzenji"
